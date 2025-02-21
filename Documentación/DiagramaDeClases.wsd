@@ -1,0 +1,63 @@
+@startuml Scrabble
+
+class Main {
+    + main(): int
+    + menuPrincipal(): void
+}
+
+class Juego {
+    - jugador1: Jugador
+    - jugador2: Jugador
+    + comenzarJuego(): void
+}
+
+class Tablero {
+    - filas: int
+    - columnas: int
+    - casilla: Casilla
+    - casilla[][]: Casilla
+    + mostrarTablero(): void
+    + editarCasilla(int fila, int columna, char letra): void
+}
+
+class Casilla {
+    - letra: Letra
+    - estaBloqueado: boolean
+
+}
+
+class Letra {
+    - puntuacion: int
+    + asignarPuntuacion(): void
+}
+
+class Jugador {
+    - nombre: String
+    - fichas: int
+    - puntuacion: int
+}
+
+class CargaDatos {
+    - path: String
+    + leerCsv(): void
+    + ordenarPalabras(): void
+    + obtenerTotalLetras(): void
+}
+
+class Reporte {
+    + palabrasJugadas(): void
+    + palabrasNoEncontradas(): void
+    + listaJugadores(): void
+    + tiempoPorTurno(): void
+    + movimientoPorJugadores(): void
+}
+
+Tablero *-- Casilla
+Casilla *-- Letra
+Main *-- Juego
+Main o-- Reporte
+Juego *-- Tablero
+Juego *-- Jugador
+Juego *-- CargaDatos
+
+@enduml

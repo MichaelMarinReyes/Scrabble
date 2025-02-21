@@ -1,4 +1,7 @@
-#include "mecanicajuego/Juego.h"
+#include <stdio.h>
+#include <string>
+#include <iostream>
+#include "Juego.h"
 using namespace std;
 
 
