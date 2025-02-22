@@ -9,6 +9,7 @@ class Juego {
     - jugador1: Jugador
     - jugador2: Jugador
     + comenzarJuego(): void
+    + mostrarReportes(): void
 }
 
 class Tablero {
@@ -55,7 +56,7 @@ class Reporte {
 Tablero *-- Casilla
 Casilla *-- Letra
 Main *-- Juego
-Main o-- Reporte
+Juego o-- Reporte
 Juego *-- Tablero
 Juego *-- Jugador
 Juego *-- CargaDatos

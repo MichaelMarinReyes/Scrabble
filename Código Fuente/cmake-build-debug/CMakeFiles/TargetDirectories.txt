@@ -1,0 +1,3 @@
+/home/michael/Documentos/2025/Estructura de Datos/Laboratorio/Práctica 1/Código Fuente/cmake-build-debug/CMakeFiles/CodigoFuente.dir
+/home/michael/Documentos/2025/Estructura de Datos/Laboratorio/Práctica 1/Código Fuente/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/michael/Documentos/2025/Estructura de Datos/Laboratorio/Práctica 1/Código Fuente/cmake-build-debug/CMakeFiles/rebuild_cache.dir

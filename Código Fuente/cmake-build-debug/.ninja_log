@@ -1,0 +1,8 @@
+# ninja log v6
+1	652	1740266526041826230	CMakeFiles/CodigoFuente.dir/main.cpp.o	d6296de57061a4a
+652	774	1740266526693830918	CodigoFuente	f4e0553bbbf9cf05
+4	425	1740267117650603489	CMakeFiles/CodigoFuente.dir/src/juego/Jugador.cpp.o	2c7e29b8ed171d9a
+1	533	1740267117650603489	CMakeFiles/CodigoFuente.dir/src/main.cpp.o	214c404678236b60
+4	559	1740267174002537775	CMakeFiles/CodigoFuente.dir/src/utils/CargaDatos.cpp.o	a0a901ec33c7456f
+2	512	1740267211386505958	CMakeFiles/CodigoFuente.dir/src/juego/Juego.cpp.o	787d7b5bdf74961a
+512	574	1740267211894505582	CodigoFuente	e271603f77ba1ba9
