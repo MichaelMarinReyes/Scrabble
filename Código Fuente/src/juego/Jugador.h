@@ -4,23 +4,39 @@
 
 #ifndef JUGADOR_H
 #define JUGADOR_H
+#include "Jugador.h"
+#include <vector>
 #include <string>
+#include <chrono>
 
 using namespace std;
 
 class Jugador {
 private:
     string nombre;
-    int fichas;
+    vector<char> fichas;
+    vector<string> palabrasJugadas;
+    vector<string> movimientos;
     int puntuacion;
+    int cantidadMovimientos;
+    chrono::duration<double> tiempoTotalTurnos;
+    chrono::time_point<chrono::system_clock> tiempoInicioTurno;
+
 public:
-    Jugador(string nombre, int fichas, int puntuacion) {
-        this-> nombre = nombre;
-        this-> fichas = fichas;
-        this-> puntuacion = puntuacion;
-    }
-    ~Jugador();
+    Jugador(string& nombre);
+    string getNombre();
+    int getPuntuacion();
+    int getCantidadMovimientos();
+    int getTiempoPromedioturnno();
+    vector<string>& getPalabrasJugadas();
+    void agregarFicha(char ficha);
+    void colocarFicha(string& palabra, int puntos);
+    void deshacerMovimiento();
+    void iniciarTurno();
+    void finalizarTurno();
+    void mostrarPalabrasJugadas();
+    void mostrarFichas();
+
 };
 
-
-#endif //JUGADOR_H
+#endif

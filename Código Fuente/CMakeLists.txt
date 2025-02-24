@@ -12,8 +12,6 @@ add_executable(CodigoFuente src/main.cpp
         src/utils/CargaDatos.h
         src/tablero/Tablero.cpp
         src/tablero/Tablero.h
-        src/tablero/NodoFila.cpp
-        src/tablero/NodoFila.h
-        src/tablero/NodoCelda.cpp
-        src/tablero/NodoCelda.h
+        src/tablero/Nodo.cpp
+        src/tablero/Nodo.h
 )

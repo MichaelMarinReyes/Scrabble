@@ -54,8 +54,7 @@
 				3,
 				5,
 				7,
-				9,
-				11
+				9
 			]
 		}
 	],
@@ -93,8 +92,7 @@
 				3,
 				5,
 				7,
-				9,
-				11
+				9
 			]
 		},
 		{
@@ -105,8 +103,7 @@
 				4,
 				6,
 				8,
-				10,
-				12
+				10
 			]
 		}
 	],
@@ -165,23 +162,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/tablero/NodoFila.cpp",
+			"path" : "src/tablero/Nodo.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/tablero/NodoFila.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/tablero/NodoCelda.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/tablero/NodoCelda.h",
+			"path" : "src/tablero/Nodo.h",
 			"sourceGroupIndex" : 1
 		}
 	],

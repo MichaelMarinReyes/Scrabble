@@ -79,14 +79,8 @@ build CMakeFiles/CodigoFuente.dir/src/tablero/Tablero.cpp.o: CXX_COMPILER__Codig
   OBJECT_DIR = CMakeFiles/CodigoFuente.dir
   OBJECT_FILE_DIR = CMakeFiles/CodigoFuente.dir/src/tablero
 
-build CMakeFiles/CodigoFuente.dir/src/tablero/NodoFila.cpp.o: CXX_COMPILER__CodigoFuente_unscanned_Debug /home/michael/Documentos/2025/Estructura$ de$ Datos/Laboratorio/Práctica$ 1/Código$ Fuente/src/tablero/NodoFila.cpp || cmake_object_order_depends_target_CodigoFuente
-  DEP_FILE = CMakeFiles/CodigoFuente.dir/src/tablero/NodoFila.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/CodigoFuente.dir
-  OBJECT_FILE_DIR = CMakeFiles/CodigoFuente.dir/src/tablero
-
-build CMakeFiles/CodigoFuente.dir/src/tablero/NodoCelda.cpp.o: CXX_COMPILER__CodigoFuente_unscanned_Debug /home/michael/Documentos/2025/Estructura$ de$ Datos/Laboratorio/Práctica$ 1/Código$ Fuente/src/tablero/NodoCelda.cpp || cmake_object_order_depends_target_CodigoFuente
-  DEP_FILE = CMakeFiles/CodigoFuente.dir/src/tablero/NodoCelda.cpp.o.d
+build CMakeFiles/CodigoFuente.dir/src/tablero/Nodo.cpp.o: CXX_COMPILER__CodigoFuente_unscanned_Debug /home/michael/Documentos/2025/Estructura$ de$ Datos/Laboratorio/Práctica$ 1/Código$ Fuente/src/tablero/Nodo.cpp || cmake_object_order_depends_target_CodigoFuente
+  DEP_FILE = CMakeFiles/CodigoFuente.dir/src/tablero/Nodo.cpp.o.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/CodigoFuente.dir
   OBJECT_FILE_DIR = CMakeFiles/CodigoFuente.dir/src/tablero
@@ -99,7 +93,7 @@ build CMakeFiles/CodigoFuente.dir/src/tablero/NodoCelda.cpp.o: CXX_COMPILER__Cod
 #############################################
 # Link the executable CodigoFuente
 
-build CodigoFuente: CXX_EXECUTABLE_LINKER__CodigoFuente_Debug CMakeFiles/CodigoFuente.dir/src/main.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Juego.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Jugador.cpp.o CMakeFiles/CodigoFuente.dir/src/utils/CargaDatos.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/Tablero.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/NodoFila.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/NodoCelda.cpp.o
+build CodigoFuente: CXX_EXECUTABLE_LINKER__CodigoFuente_Debug CMakeFiles/CodigoFuente.dir/src/main.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Juego.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Jugador.cpp.o CMakeFiles/CodigoFuente.dir/src/utils/CargaDatos.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/Tablero.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/Nodo.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/CodigoFuente.dir
   POST_BUILD = :

@@ -38,8 +38,7 @@ void Juego::menuPrincipal() {
 }
 
 void Juego::comenzarJuego() {
-    string jugador1;
-    string jugador2;
+    string nombreJugador;
     int cantidadJugadores;
 
     do {
@@ -54,14 +53,16 @@ void Juego::comenzarJuego() {
     cout << "\n-- REGISTRO DE JUGADORES --\n";
     for (int i = 0; i < cantidadJugadores; i++) {
         cout << "Ingrese el nombre del jugador " << i + 1 << endl;
-        cin >> jugador1;
+        cin >> nombreJugador;
+        Jugador jugador(nombreJugador);
+        jugadores.push_back(jugador);
     }
 
     CargaDatos cargarDatos;
     cargarDatos.leerCsv();
     Tablero tablero;
     tablero.crearTablero();
-    tablero.mostrarTablero();
+    tablero.mostrarTablero(jugadores);
 }
 
 void Juego::mostrarReportes() {

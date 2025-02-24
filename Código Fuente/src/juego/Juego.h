@@ -11,8 +11,7 @@ using namespace std;
 
 class Juego {
 private:
-    /*Jugador jugador1;
-    Jugador jugador2;*/
+    vector<Jugador> jugadores;
 
 
 public:

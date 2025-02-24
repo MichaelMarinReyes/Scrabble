@@ -4,68 +4,94 @@
 
 #include "Tablero.h"
 #include <iostream>
+#include "../juego/Jugador.h"
 
 using namespace std;
 
+Tablero::Tablero() {
+    this -> inicio = nullptr;
+    crearTablero();
+    bloquearCasillasAleatorias();
+}
+
 void Tablero::crearTablero() {
-    NodoFila* filaActual = nullptr;
-    NodoFila* filaAnterior = nullptr;
+    Nodo* filaAnterior = nullptr;
+    for (int i = 0; i < filasColumnas; i++) {
+        Nodo* filaActual = nullptr;
+        Nodo* anterior = nullptr;
 
-    for (int i = 0; i < filaColumna; i++) {
-        NodoFila* nuevaFila = new NodoFila();
-        if (i == 0) {
-            primeraFila = nuevaFila;
-        } else {
-            filaAnterior->abajo = nuevaFila;
-        }
-        filaAnterior = nuevaFila;
+        for (int j = 0; j < filasColumnas; j++) {
+            Nodo* nuevoNodo = new Nodo();
 
-        NodoCelda* celdaAnterior = nullptr;
+            if (!filaActual) filaActual = nuevoNodo;
+            if (anterior) anterior -> siguiente = nuevoNodo;
+            anterior = nuevoNodo;
 
-        for (int j = 0; j < filaColumna; j++) {
-            NodoCelda *nuevaCelda = new NodoCelda(i * filaColumna + j);
-
-            if (j == 0) {
-                nuevaFila->primeraCelda = nuevaCelda;
-            } else {
-                celdaAnterior->derecha = nuevaCelda;
+            if (filaAnterior) {
+                Nodo* arriba = filaAnterior;
+                for (int k = 0; k < j; k++) {
+                    arriba = arriba -> siguiente;
+                }
+                arriba -> abajo = nuevoNodo;
             }
+        }
 
-            celdaAnterior = nuevaCelda;
+        if (!inicio) inicio = filaActual;
+        filaAnterior = filaActual;
+    }
+}
+
+void Tablero::bloquearCasillasAleatorias() {
+    srand(time(0));
+    int bloqueadas = 0;
+
+    while (bloqueadas < 10) {
+        int fila = rand() % filasColumnas;
+        int columna = rand() % filasColumnas;
+
+        Nodo* nodo = obtenerNodo(fila, columna);
+        if (nodo && !nodo -> bloqueada) {
+            nodo -> bloqueada = true;
+            bloqueadas++;
         }
     }
 }
 
-void Tablero::mostrarTablero() {
-    NodoFila *filaActual = primeraFila;
+Nodo* Tablero::obtenerNodo(int fila, int columna) {
+    Nodo* actual = inicio;
+    for (int i = 0; i < fila; i++) {
+        if (actual) actual = actual -> abajo;
+    }
+    for (int j = 0; j < columna; j++) {
+        if (actual) actual = actual -> siguiente;
+    }
+    return actual;
+}
 
-    while (filaActual) {
-        NodoCelda *celdaActual = filaActual->primeraCelda;
-        while (celdaActual) {
-            cout << celdaActual->valor << "\t";
-            celdaActual = celdaActual->derecha;
+void Tablero::mostrarTablero(vector<Jugador> jugadores) {
+    Nodo* fila = inicio;
+    while (fila) {
+        Nodo* actual = fila;
+        while (actual) {
+            if (actual -> bloqueada) {
+                cout << "[\033[31m#\033[0m]";
+            } else {
+                cout << "[ ]";
+            }
+            actual = actual -> siguiente;
         }
         cout << endl;
-        filaActual = filaActual->abajo;
+        fila = fila ->abajo;
     }
+
+    mostrarJugadores();
 }
 
-void Tablero::liberarMemoria() {
-    NodoFila *filaActual = primeraFila;
-    while (filaActual) {
-        NodoCelda *celdaActual = filaActual->primeraCelda;
-        while (celdaActual) {
-            NodoCelda *celdaTemp = celdaActual;
-            celdaActual = celdaActual->derecha;
-            delete celdaTemp;
-        }
-        NodoFila *filaTemp = filaActual;
-        filaActual = filaActual->abajo;
-        delete filaTemp;
+void Tablero::mostrarJugadores() {
+    cout << "Jugadores en partida:\n";
+    for (Jugador& jugador : jugadores) {
+        cout << "Jugador: " << jugador.getNombre() << "\n";
+        cout << "\tFichas: ";
+        jugador.mostrarFichas();
     }
-}
-
-// Destructor fuera de liberarMemoria()
-Tablero::~Tablero() {
-    liberarMemoria();
 }
