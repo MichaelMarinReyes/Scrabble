@@ -62,14 +62,13 @@ void Juego::comenzarJuego() {
     CargaDatos cargarDatos;
     cargarDatos.leerCsv();
     Tablero tablero;
-    tablero.crearTablero();
     tablero.mostrarTablero(jugadores);
 
-    jugarTurnos();
+    //jugarTurnos();
 }
 
 void Juego::jugarTurnos(Tablero& tablero) {
-    int turno = 0;
+    /*int turno = 0;
     while (true) {
         Jugador& jugadorActual = jugadores[turno];
 
@@ -116,7 +115,7 @@ void Juego::jugarTurnos(Tablero& tablero) {
     }
 
     // Al finalizar el juego, mostrar los resultados
-    mostrarResultados();
+    mostrarResultados();*/
 }
 
 bool Juego::verificarFinDeJuego() {
@@ -128,25 +127,13 @@ bool Juego::verificarFinDeJuego() {
 
 void Juego::mostrarResultados() {
     cout << "\n--- Resultados ---\n";
-    // Ordenar los jugadores por puntaje
-    sort(jugadores.begin(), jugadores.end(), [](const Jugador& a, const Jugador& b) {
-        return a.getPuntaje() > b.getPuntaje();  // Ordena de mayor a menor puntaje
-    });
 
-    // Mostrar jugadores ordenados por puntaje
-    for (const auto& jugador : jugadores) {
-        cout << jugador.getNombre() << " - Puntos: " << jugador.getPuntaje() << endl;
-    }
 }
 
 void Juego::mostrarReportes() {
     cout << "\n--- REPORTES ---\n";
     cout << "Historial de palabras jugadas:\n";
     // Mostrar las palabras jugadas desde la pila
-    while (!historialPalabras.empty()) {
-        cout << historialPalabras.top() << endl;
-        historialPalabras.pop();
-    }
 
     // Mostrar historial de palabras no encontradas
     cout << "\nPalabras no encontradas:\n";
@@ -159,8 +146,5 @@ void Juego::mostrarReportes() {
     cout << "\nResumen del tiempo promedio de cada turno:\n";
     // Implementar el cálculo del tiempo promedio por turno
     cout << "\nCantidad de movimientos realizados por cada jugador:\n";
-    // Mostrar los movimientos por jugador
-    for (const auto& jugador : jugadores) {
-        cout << jugador.getNombre() << ": " << jugador.getMovimientos() << " movimientos\n";
-    }
+
 }
