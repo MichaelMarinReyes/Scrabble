@@ -14,4 +14,6 @@ add_executable(CodigoFuente src/main.cpp
         src/tablero/Tablero.h
         src/tablero/Nodo.cpp
         src/tablero/Nodo.h
+        src/puntuacion/Puntaje.cpp
+        src/puntuacion/Puntaje.h
 )

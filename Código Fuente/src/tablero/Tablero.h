@@ -21,7 +21,7 @@ public:
     Nodo* obtenerNodo(int fila, int columna);
     void colocarLetra(int fila, int columna, char letra);
     void mostrarTablero(vector<Jugador> jugadores);
-    void mostrarJugadores();
+    void mostrarJugadores(vector<Jugador> jugadores);
 };
 
 #endif

@@ -84,11 +84,12 @@ void Tablero::mostrarTablero(vector<Jugador> jugadores) {
         fila = fila ->abajo;
     }
 
-    mostrarJugadores();
+    mostrarJugadores(jugadores);
 }
 
-void Tablero::mostrarJugadores() {
-    cout << "Jugadores en partida:\n";
+void Tablero::mostrarJugadores(vector<Jugador> jugadores) {
+    cout <<"\n____________________________________________";
+    cout << "\n\t--- Jugadores en partida ---\n";
     for (Jugador& jugador : jugadores) {
         cout << "Jugador: " << jugador.getNombre() << "\n";
         cout << "\tFichas: ";

@@ -27,4 +27,4 @@ public:
     bool verificarExtension(const string& archivo);
 };
 
-#endif //CARGADATOS_H
+#endif

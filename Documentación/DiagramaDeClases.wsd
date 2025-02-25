@@ -1,64 +1,82 @@
 @startuml Scrabble
 
-class Main {
-    + main(): int
-    + menuPrincipal(): void
+class main {
+    main(): int
 }
+
+main *-- Juego
 
 class Juego {
-    - jugador1: Jugador
-    - jugador2: Jugador
-    + comenzarJuego(): void
-    + mostrarReportes(): void
-}
-
-class Tablero {
-    - filas: int
-    - columnas: int
-    - casilla: Casilla
-    - casilla[][]: Casilla
-    + mostrarTablero(): void
-    + editarCasilla(int fila, int columna, char letra): void
-}
-
-class Casilla {
-    - letra: Letra
-    - estaBloqueado: boolean
-
-}
-
-class Letra {
-    - puntuacion: int
-    + asignarPuntuacion(): void
+  - jugadores: List<Jugador>
+  - tablero: Tablero
+  - palabrasDisponibles: List<String>
+  - historialPalabras: Stack<String>
+  - turnoActual: Jugador
+  + iniciarJuego(): void
+  + calcularPuntaje(): void
+  + ordenarJugadoresPorPuntaje(): void
+  + mostrarReporte(): void
 }
 
 class Jugador {
-    - nombre: String
-    - fichas: int
-    - puntuacion: int
+  - nombre: String
+  - fichas: LinkedList<Ficha>
+  - puntaje: int
+  + agregarFicha(ficha: Ficha): void
+  + ordenarFichasPorPuntaje(): void
+  + jugarPalabra(palabra: String): void
+}
+
+class Ficha {
+  - letra: char
+  - valor: int
+  + obtenerValor(): int
+}
+
+class Tablero {
+  - casillas: List<List<Casilla>>
+  + generarTablero(): void
+  + colocarFicha(ficha: Ficha, x: int, y: int): void
+}
+
+class Casilla {
+  - letra: char
+  - puedeColocar: bool
+  + estaOcupada(): bool
+}
+
+class ColaTurnos {
+  - jugadores: Queue<Jugador>
+  + rotarTurnos(): void
+  + siguienteTurno(): Jugador
+}
+
+class Pila {
+  - palabras: Stack<String>
+  + apilarPalabra(palabra: String): void
+  + deshacerUltimoMovimiento(): void
 }
 
 class CargaDatos {
-    - path: String
-    + leerCsv(): void
-    + ordenarPalabras(): void
-    + obtenerTotalLetras(): void
+  - path: string
+  - linea: string
+  - delimitador: char
+  - fila: vector<string>
+  + getFila(): vector<string>
+  + leerCsv(): void
+  + ordenarPalabras(): void
+  + obtenerTotalLetras(): void
+  + mostrarPalabras(): void
+  + verificarExtension(archivo: string): bool
 }
 
-class Reporte {
-    + palabrasJugadas(): void
-    + palabrasNoEncontradas(): void
-    + listaJugadores(): void
-    + tiempoPorTurno(): void
-    + movimientoPorJugadores(): void
-}
-
-Tablero *-- Casilla
-Casilla *-- Letra
-Main *-- Juego
-Juego o-- Reporte
-Juego *-- Tablero
-Juego *-- Jugador
-Juego *-- CargaDatos
+Juego "1" *-- "2..*" Jugador : tiene
+Juego "1" *-- "1" Tablero : tiene
+Jugador "1" *-- "1..*" Ficha : tiene
+Jugador "1" *-- "1" ColaTurnos : usa
+Tablero "1" *-- "15..*" Casilla : contiene
+Juego "1" *-- "1" Pila : usa
+Jugador "1" *-- "1" Pila : usa
+Juego "1" *-- "1" CargaDatos : usa
 
 @enduml
