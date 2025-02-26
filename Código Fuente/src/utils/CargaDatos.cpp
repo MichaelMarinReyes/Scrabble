@@ -11,7 +11,7 @@
 using namespace std;
 
 vector<string> CargaDatos::getFila() {
-    vector<string> fila;
+    return fila;
 }
 
 void CargaDatos::leerCsv() {
@@ -40,7 +40,9 @@ void CargaDatos::leerCsv() {
             fila.clear();
 
             while (getline(ss, palabra, delimitador)) {
-                fila.push_back(palabra);
+                if (!palabra.empty()) {
+                    fila.push_back(palabra);
+                }
             }
 
             mostrarPalabras();

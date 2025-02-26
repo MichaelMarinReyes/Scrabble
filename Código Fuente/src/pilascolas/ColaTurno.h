@@ -4,18 +4,18 @@
 
 #ifndef COLATURNO_H
 #define COLATURNO_H
-#include "NodoJugador.h"
+#include "NodoSimple.h"
 #include "../juego/Jugador.h"
 
 
 class ColaTurno {
 private:
-    NodoJugador *frente = NULL;
-    NodoJugador *fin = NULL;
+    NodoSimple<Jugador> *frente = NULL;
+    NodoSimple<Jugador> *fin = NULL;
 public:
-    void insertarCola(NodoJugador *&frente, NodoJugador *&fin, Jugador jugador);
-    bool colaVacia(NodoJugador *&frente);
-    void eliminarCola(NodoJugador *&frente, NodoJugador *&fin, Jugador &jugador);
+    void insertarCola(NodoSimple<Jugador> *&frente, NodoSimple<Jugador> *&fin, Jugador jugador);
+    bool colaVacia(NodoSimple<Jugador> *&frente);
+    void eliminarCola(NodoSimple<Jugador> *&frente, NodoSimple<Jugador> *&fin, Jugador &jugador);
 };
 
 

@@ -4,8 +4,11 @@
 
 #include "Tablero.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "../juego/Jugador.h"
 #include "../juego/Ficha.h"
+#include "../pilascolas/NodoDoble.h"
 
 using namespace std;
 
@@ -15,12 +18,47 @@ Tablero::Tablero() {
 
 void Tablero::crearTablero() {
     for (int i = 0; i < filasColumnas; i++) {
+        Lista<NodoDoble<char>> fila;
+        NodoDoble<char> *nodoAnterior = nullptr;
         for (int j = 0; j < filasColumnas; j++) {
-            listaTablero.insertarLista(' ');
+            NodoDoble<char> *nuevoNodo = new NodoDoble<char>(' ');
+            fila.insertarFinal(nuevoNodo->dato);
+
+            if (nodoAnterior) {
+                nodoAnterior->siguiente = nuevoNodo;
+                nuevoNodo->anterior = nodoAnterior;
+            }
+            nodoAnterior = nuevoNodo;
         }
+        cout << "truena en el método crearTablero\n";
+        listaTablero.insertarFinal(fila);
     }
-    bloquearCasillasAleatorias();
+cout << "creando tablero\n";
+    //enlazarFilas();
+
+    //bloquearCasillasAleatorias();
 }
+
+void Tablero::enlazarFilas() {
+    NodoDoble<Lista<NodoDoble<char>>> *filaActual = listaTablero.getInicio();
+    NodoDoble<Lista<NodoDoble<char>>> *filaAbajo = filaActual ? filaActual->siguiente : nullptr;
+
+    while (filaActual && filaAbajo) {
+        NodoDoble<NodoDoble<char>> *nodoArriba = filaActual->dato.getInicio();
+        NodoDoble<NodoDoble<char>> *nodoAbajo = filaAbajo->dato.getInicio();
+
+        while (nodoArriba && nodoAbajo) {
+            nodoArriba->abajo = nodoAbajo;
+            nodoAbajo->arriba = nodoArriba;
+
+            nodoArriba = nodoArriba->siguiente;
+            nodoAbajo = nodoAbajo->siguiente;
+        }
+        filaActual = filaAbajo;
+        filaAbajo = filaAbajo->siguiente;
+    }
+}
+
 
 void Tablero::bloquearCasillasAleatorias() {
     srand(time(0));
@@ -28,46 +66,59 @@ void Tablero::bloquearCasillasAleatorias() {
 
     while (bloqueadas < 10) {
         int fila = rand() % filasColumnas;
-        int columna = rand() % filasColumnas;;
+        int columna = rand() % filasColumnas;
 
-        NodoLetras *nodo = obtenerNodo(fila, columna);
+        NodoDoble<char> *nodo = obtenerNodo(fila, columna);
         if (nodo && nodo->dato == ' ') {
-            nodo -> dato = '#';
+            nodo->dato = '#';
             bloqueadas++;
         }
     }
 }
 
-NodoLetras *Tablero::obtenerNodo(int fila, int columna) {
-    int posicion = fila * filasColumnas + columna;
-    NodoLetras *actual = listaTablero.getInicio();
+NodoDoble<char> *Tablero::obtenerNodo(int fila, int columna) {
+    NodoDoble<Lista<NodoDoble<char> > > *filaNodo = listaTablero.getInicio();
 
-    for (int i = 0; i < posicion; i++) {
-        if (actual) actual = actual->siguiente;
+    for (int i = 0; i < fila; i++) {
+        if (filaNodo) filaNodo = filaNodo->siguiente;
     }
-    return actual;
+
+    if (filaNodo) {
+        NodoDoble<NodoDoble<char> > *actual = filaNodo->dato.getInicio();
+        for (int j = 0; j < columna; j++) {
+            if (actual) actual = actual->siguiente;
+        }
+        if (actual) {
+            return &actual->dato;
+        }
+    }
+    return nullptr;
 }
 
 void Tablero::mostrarTablero(vector<Jugador> jugadores) {
-    NodoLetras *actual = listaTablero.getInicio();
-    int contador = 0;
+    cout<<"mostrando tablero";
+    NodoDoble<Lista<NodoDoble<char> > > *filaActual = listaTablero.getInicio();
 
     cout << "\n--------------TABLERO DE JUEGO---------------\n";
-    while (actual) {
-        if (actual->dato == '#') {
-            cout << "[\033[31m#\033[0m]";
-        } else {
-            cout << "[ ]";
+    while (filaActual) {
+        NodoDoble<NodoDoble<char> > *actual = filaActual->dato.getInicio();
+
+        while (actual) {
+            if (actual->dato.dato == '#') {
+                cout << "[\033[31m#\033[0m]";
+            } else {
+                cout << "[ ]";
+            }
+            actual = actual->siguiente;
         }
 
-        contador++;
-        if (contador % filasColumnas == 0) cout << endl;
-
-        actual = actual->siguiente;
+        cout << endl;
+        filaActual = filaActual->siguiente;
     }
 
     mostrarJugadores(jugadores);
 }
+
 
 void Tablero::mostrarJugadores(vector<Jugador> jugadores) {
     cout << "\n____________________________________________";

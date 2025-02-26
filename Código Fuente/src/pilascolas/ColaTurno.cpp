@@ -5,10 +5,10 @@
 #include "ColaTurno.h"
 #include <iostream>
 #include "../juego/Jugador.h"
-#include "NodoJugador.h"
+#include "NodoSimple.h"
 
-void ColaTurno::insertarCola(NodoJugador *&frente, NodoJugador *&fin, Jugador jugador) {
-    NodoJugador *nuevoNodo = new NodoJugador(jugador);
+void ColaTurno::insertarCola(NodoSimple<Jugador> *&frente, NodoSimple<Jugador> *&fin, Jugador jugador) {
+    NodoSimple<Jugador> *nuevoNodo = new NodoSimple<Jugador>(jugador);
     nuevoNodo->dato = jugador;
     nuevoNodo->siguiente = NULL;
 
@@ -20,13 +20,13 @@ void ColaTurno::insertarCola(NodoJugador *&frente, NodoJugador *&fin, Jugador ju
     fin = nuevoNodo;
 }
 
-bool ColaTurno::colaVacia(NodoJugador *&frente) {
+bool ColaTurno::colaVacia(NodoSimple<Jugador> *&frente) {
     return (frente == NULL) ? true : false;
 }
 
-void ColaTurno::eliminarCola(NodoJugador *&frente, NodoJugador *&fin, Jugador &jugador) {
+void ColaTurno::eliminarCola(NodoSimple<Jugador> *&frente, NodoSimple<Jugador> *&fin, Jugador &jugador) {
     jugador = frente->dato;
-    NodoJugador *auxiliar = frente;
+    NodoSimple<Jugador> *auxiliar = frente;
 
     if (frente == fin) {
         frente = NULL;

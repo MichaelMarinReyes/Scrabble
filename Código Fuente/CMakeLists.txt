@@ -12,8 +12,6 @@ add_executable(CodigoFuente src/main.cpp
         src/utils/CargaDatos.h
         src/tablero/Tablero.cpp
         src/tablero/Tablero.h
-        src/pilascolas/NodoLetras.cpp
-        src/pilascolas/NodoLetras.h
         src/puntuacion/Puntaje.cpp
         src/puntuacion/Puntaje.h
         src/juego/Ficha.cpp
@@ -24,8 +22,8 @@ add_executable(CodigoFuente src/main.cpp
         src/pilascolas/ColaTurno.h
         src/pilascolas/Pila.cpp
         src/pilascolas/Pila.h
-        src/pilascolas/NodoJugador.cpp
-        src/pilascolas/NodoJugador.h
-        src/pilascolas/ListaCaracteres.cpp
-        src/pilascolas/ListaCaracteres.h
+        src/pilascolas/NodoDoble.cpp
+        src/pilascolas/NodoDoble.h
+        src/pilascolas/Lista.cpp
+        src/pilascolas/Lista.h
 )

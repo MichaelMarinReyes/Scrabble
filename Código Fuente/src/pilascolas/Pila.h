@@ -4,18 +4,19 @@
 
 #ifndef PILA_H
 #define PILA_H
-#include "NodoLetras.h"
+#include "NodoSimple.h"
+#include "../juego/Jugador.h"
 
 using namespace std;
 
 
 class Pila {
 private:
-    NodoLetras *nodo = NULL;
+    NodoSimple<Jugador> *nodo = NULL;
 
 public:
-    void agregarPila(NodoLetras *&pila, char letra);
-    void quitarPila(NodoLetras *&pila, char &letra);
+    void agregarPila(NodoSimple<Jugador> *&pila, Jugador jugador);
+    void quitarPila(NodoSimple<Jugador> *&pila, Jugador &jugador);
 };
 
 

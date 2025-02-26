@@ -72,7 +72,7 @@ void Juego::comenzarJuego() {
     }
 
     CargaDatos cargarDatos;
-    cargarDatos.leerCsv();
+    //cargarDatos.leerCsv();
     Tablero tablero;
     tablero.mostrarTablero(jugadores);
 

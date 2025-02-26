@@ -8,7 +8,9 @@
 
 using namespace std;
 
-Jugador::Jugador(string &nombre) : nombre(nombre), puntuacion(0), cantidadMovimientos(0), tiempoTotalTurnos(chrono::seconds(0)) {}
+Jugador::Jugador(string &nombre) : nombre(nombre), puntuacion(0), cantidadMovimientos(0),
+                                   tiempoTotalTurnos(chrono::seconds(0)) {
+}
 
 string Jugador::getNombre() {
     return nombre;
@@ -26,7 +28,7 @@ int Jugador::getTiempoPromedioturnno() {
     if (cantidadMovimientos == 0) {
         return 0;
     } else {
-        return tiempoTotalTurnos.count() /cantidadMovimientos;
+        return tiempoTotalTurnos.count() / cantidadMovimientos;
     }
 }
 
@@ -75,7 +77,7 @@ void Jugador::iniciarTurno() {
 
 void Jugador::finalizarTurno() {
     auto tiempoFinalTurno = chrono::high_resolution_clock::now();
-    tiempoTotalTurnos += chrono::duration_cast<chrono::duration<double>>(tiempoFinalTurno - tiempoInicioTurno);
+    tiempoTotalTurnos += chrono::duration_cast<chrono::duration<double> >(tiempoFinalTurno - tiempoInicioTurno);
 }
 
 void Jugador::mostrarPalabrasJugadas() {
@@ -83,7 +85,7 @@ void Jugador::mostrarPalabrasJugadas() {
         cout << "No se ha jugado ninuna palabra\n";
     } else {
         cout << "Palabras jugadas:\n";
-        for (const auto& palabra: palabrasJugadas) {
+        for (const auto &palabra: palabrasJugadas) {
             cout << palabra << "\n";
         }
     }

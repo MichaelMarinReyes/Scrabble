@@ -8,9 +8,11 @@
 
 using namespace std;
 
-struct NodoLetras {
-    char dato;
-    NodoLetras* siguiente;
+template<class T>
+
+struct NodoSimple {
+    T dato;
+    NodoSimple* siguiente;
 };
 
 #endif

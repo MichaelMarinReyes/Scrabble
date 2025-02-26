@@ -3,20 +3,20 @@
 //
 
 #include "Pila.h"
-#include "NodoLetras.h"
+#include "NodoSimple.h"
 #include <stdlib.h>
 
-void Pila::agregarPila(NodoLetras *&pila, char letra) {
-    NodoLetras *nuevoNodo = new NodoLetras();
-    nuevoNodo->dato = letra;
+void Pila::agregarPila(NodoSimple<Jugador> *&pila, Jugador jugador) {
+    NodoSimple<Jugador> *nuevoNodo = new NodoSimple<Jugador>(jugador);
+    nuevoNodo->dato = jugador;
     nuevoNodo->siguiente = pila;
     pila = nuevoNodo;
 }
 
-void Pila::quitarPila(NodoLetras *&pila, char &letra) {
-    NodoLetras *auxilar = pila;
+void Pila::quitarPila(NodoSimple<Jugador> *&pila, Jugador &jugador) {
+    NodoSimple<Jugador> *auxilar = pila;
     if (pila != NULL) {
-        letra = auxilar->dato;
+        jugador = auxilar->dato;
         pila = auxilar->siguiente;
         delete auxilar;
     } else {
