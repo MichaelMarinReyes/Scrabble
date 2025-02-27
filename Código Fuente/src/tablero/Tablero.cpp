@@ -6,6 +6,7 @@
 #include <iostream>
 #include "../juego/Jugador.h"
 #include "../juego/Ficha.h"
+#include "../pilascolas/ColaTurno.hpp"
 #include "../pilascolas/NodoDoble.hpp"
 
 using namespace std;
@@ -66,7 +67,7 @@ NodoDoble<char> *Tablero::obtenerNodo(int fila, int columna) {
     return nullptr;
 }
 
-void Tablero::mostrarTablero(vector<Jugador> jugadores) {
+void Tablero::mostrarTablero(ColaTurno<Jugador> jugadores) {
     cout << "\n--------------TABLERO DE JUEGO---------------\n";
     for (int i = 0; i < FILAS_COLUMNAS; i++) {
         for (int j = 0; j < FILAS_COLUMNAS; j++) {
@@ -82,12 +83,8 @@ void Tablero::mostrarTablero(vector<Jugador> jugadores) {
 }
 
 
-void Tablero::mostrarJugadores(vector<Jugador> jugadores) {
+void Tablero::mostrarJugadores(ColaTurno<Jugador> jugadores) {
     cout << "\n____________________________________________";
     cout << "\n\t--- Jugadores en partida ---\n";
-    for (Jugador &jugador: jugadores) {
-        cout << "Jugador: " << jugador.getNombre() << "\n";
-        cout << "\tFichas: ";
-        jugador.mostrarFichas();
-    }
+    jugadores.mostrarTodos();
 }

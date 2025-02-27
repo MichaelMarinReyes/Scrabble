@@ -23,7 +23,7 @@ private:
     chrono::time_point<chrono::system_clock> tiempoInicioTurno;
 
 public:
-    Jugador(string& nombre);
+    Jugador(string nombre);
     string getNombre();
     int getPuntuacion();
     int getCantidadMovimientos();

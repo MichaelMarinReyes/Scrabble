@@ -8,13 +8,14 @@ using namespace std;
 template<class T>
 class NodoSimple {
 private:
-    T dato;
+    T* dato;
 public:
-    NodoSimple(const T valor);
+    NodoSimple(const T* valor);
+    ~NodoSimple();
     NodoSimple<T>* siguiente;
-    T getDato();
-    void setDato(const T dato);
-    void setSiguiente(NodoSimple<T> *siguiente);
+    T* getDato();
+    void setDato(const T* dato);
+    void setSiguiente(NodoSimple<T>* siguiente);
 };
 
 #include "NodoSimple.tpp"

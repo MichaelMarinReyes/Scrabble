@@ -4,7 +4,7 @@
 
 #include "Juego.h"
 #include <iostream>
-
+#include "../pilascolas/ColaTurno.hpp"
 #include "../tablero/Tablero.h"
 #include "../utils/CargaDatos.h"
 using namespace std;
@@ -67,8 +67,8 @@ void Juego::comenzarJuego() {
     for (int i = 0; i < cantidadJugadores; i++) {
         cout << "Ingrese el nombre del jugador " << i + 1 << endl;
         getline(cin, nombreJugador);
-        Jugador jugador(nombreJugador);
-        jugadores.push_back(jugador);
+        Jugador *jugador = new Jugador(nombreJugador);
+        jugadores.agregar(jugador);
     }
 
     CargaDatos cargarDatos;

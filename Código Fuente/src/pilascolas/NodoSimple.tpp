@@ -1,22 +1,28 @@
+#include "NodoSimple.hpp"
 
-template<typename T>
-NodoSimple<T>::NodoSimple(T data) {
-    this->dato = data;
+template<class T>
+NodoSimple<T>::NodoSimple(const T* valor) {
+    this->dato = new T(*valor);
     this->siguiente = nullptr;
 }
 
 template<class T>
-T NodoSimple<T>::getDato() {
+NodoSimple<T>::~NodoSimple() {
+    delete dato;
+}
+
+
+template<class T>
+T* NodoSimple<T>::getDato() {
     return dato;
 }
 
 template<class T>
-void NodoSimple<T>::setDato(T dato) {
-    this->dato = dato;
+void NodoSimple<T>::setDato(const T* dato) {
+    this->dato = new T(*dato);
 }
 
 template<class T>
-void NodoSimple<T>::setSiguiente(NodoSimple<T> *siguiente) {
+void NodoSimple<T>::setSiguiente(NodoSimple<T>* siguiente) {
     this->siguiente = siguiente;
 }
-

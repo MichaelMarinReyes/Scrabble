@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Jugador::Jugador(string &nombre) : nombre(nombre), puntuacion(0), cantidadMovimientos(0),
+Jugador::Jugador(string nombre) : nombre(nombre), puntuacion(0), cantidadMovimientos(0),
                                    tiempoTotalTurnos(chrono::seconds(0)) {
 }
 

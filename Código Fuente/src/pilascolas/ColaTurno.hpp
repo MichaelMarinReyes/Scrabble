@@ -9,15 +9,16 @@
 template<class T>
 class ColaTurno {
 private:
-    NodoSimple<Jugador> *frente = nullptr;
-    NodoSimple<Jugador> *fin = nullptr;
+    NodoSimple<Jugador>* frente;
+    NodoSimple<Jugador>* fin;
 public:
     ColaTurno();
     ~ColaTurno();
     bool estaVacia() const;
-    void agregar(const T& dato);
-    T eliminar();
-    T mostrar() const;
+    void agregar(const T* dato);
+    T* eliminar();
+    T* mostrar() const;
+    void mostrarTodos();
 };
 
 #include "ColaTurno.tpp"

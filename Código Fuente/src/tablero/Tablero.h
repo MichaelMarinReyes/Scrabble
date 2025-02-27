@@ -9,11 +9,13 @@
 #include "../pilascolas/NodoDoble.hpp"
 #include <vector>
 
+#include "../pilascolas/ColaTurno.hpp"
+
 class Tablero {
 private:
     static const int FILAS_COLUMNAS = 15;
     NodoDoble<char>* tablero[FILAS_COLUMNAS][FILAS_COLUMNAS];
-    vector<Jugador> jugadores;
+    ColaTurno<Jugador> jugadores;
 
 public:
     Tablero();
@@ -21,8 +23,8 @@ public:
     void bloquearCasillasAleatorias();
     NodoDoble<char> *obtenerNodo(int fila, int columna);
     void colocarLetra(int fila, int columna, char letra);
-    void mostrarTablero(vector<Jugador> jugadores);
-    void mostrarJugadores(vector<Jugador> jugadores);
+    void mostrarTablero(ColaTurno<Jugador> jugadores);
+    void mostrarJugadores(ColaTurno<Jugador> jugadores);
     void colocarFicha(Ficha ficha, int x, int y);
 };
 

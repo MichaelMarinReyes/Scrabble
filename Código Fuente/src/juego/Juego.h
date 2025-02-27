@@ -8,6 +8,7 @@
 #include <vector>
 #include <stack>
 #include "Jugador.h"
+#include "../pilascolas/ColaTurno.hpp"
 #include "../tablero/Tablero.h"
 #include "../utils/CargaDatos.h"
 #include "../puntuacion/Puntaje.h"
@@ -16,9 +17,9 @@ using namespace std;
 
 class Juego {
 private:
-    vector<Jugador> jugadores;
     stack<string> historialPalabras;
     vector<string> palabrasNoEncontradas;
+    ColaTurno<Jugador> jugadores;
 
     void comenzarJuego();
     void jugarTurnos(Tablero& tablero);
