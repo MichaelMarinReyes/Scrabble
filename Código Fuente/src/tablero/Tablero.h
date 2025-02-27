@@ -4,22 +4,20 @@
 
 #ifndef MATRIZ_NODOS_H
 #define MATRIZ_NODOS_H
-#include "../pilascolas/NodoDoble.h"
 #include "../juego/Jugador.h"
 #include "../juego/Ficha.h"
-#include "../pilascolas/Lista.h"
+#include "../pilascolas/NodoDoble.hpp"
 #include <vector>
 
 class Tablero {
 private:
-    Lista<Lista<NodoDoble<char> > > listaTablero;
-    int filasColumnas = 15;
+    static const int FILAS_COLUMNAS = 15;
+    NodoDoble<char>* tablero[FILAS_COLUMNAS][FILAS_COLUMNAS];
     vector<Jugador> jugadores;
 
 public:
     Tablero();
     void crearTablero();
-    void enlazarFilas();
     void bloquearCasillasAleatorias();
     NodoDoble<char> *obtenerNodo(int fila, int columna);
     void colocarLetra(int fila, int columna, char letra);

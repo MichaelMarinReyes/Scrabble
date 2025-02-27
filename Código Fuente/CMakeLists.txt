@@ -22,8 +22,10 @@ add_executable(CodigoFuente src/main.cpp
         src/pilascolas/ColaTurno.h
         src/pilascolas/Pila.cpp
         src/pilascolas/Pila.h
-        src/pilascolas/NodoDoble.cpp
-        src/pilascolas/NodoDoble.h
         src/pilascolas/Lista.cpp
         src/pilascolas/Lista.h
+        src/pilascolas/ListaDoble.hpp
+        src/pilascolas/ListaDoble.tpp
+        src/pilascolas/NodoDoble.hpp
+        src/pilascolas/NodoDoble.tpp
 )

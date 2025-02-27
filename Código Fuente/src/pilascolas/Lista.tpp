@@ -5,42 +5,42 @@ using namespace std;
 
 template <typename T>
 Lista<T>::~Lista() {
-    NodoDoble<T>* actual = cabeza;
+    /*NodoDoble<T>* actual = cabeza;
     while (actual) {
         NodoDoble<T>* temp = actual;
         actual = actual->siguiente;
         delete temp;
     }
-    cabeza = cola = nullptr;
+    cabeza = cola = nullptr;*/
 }
 
 template <typename T>
 void Lista<T>::insertarInicio(T valor) {
-    NodoDoble<T>* nuevo = new NodoDoble<T>(valor);
+    /*NodoDoble<T>* nuevo = new NodoDoble<T>(valor);
     if (!cabeza) {
         cabeza = cola = nuevo;
     } else {
         nuevo->siguiente = cabeza;
         cabeza->anterior = nuevo;
         cabeza = nuevo;
-    }
+    }*/
 }
 
 template <typename T>
 void Lista<T>::insertarFinal(T valor) {
-    NodoDoble<T>* nuevo = new NodoDoble<T>(valor);
+   /* NodoDoble<T>* nuevo = new NodoDoble<T>(valor);
     if (!cola) {
         cabeza = cola = nuevo;
     } else {
         nuevo->anterior = cola;
         cola->siguiente = nuevo;
         cola = nuevo;
-    }
+    }*/
 }
 
 template <typename T>
 bool Lista<T>::eliminar(T valor) {
-    if (!cabeza) return false;
+   /* if (!cabeza) return false;
 
     NodoDoble<T>* actual = cabeza;
 
@@ -65,31 +65,32 @@ bool Lista<T>::eliminar(T valor) {
     if (actual->anterior) actual->anterior->siguiente = actual->siguiente;
     if (actual->siguiente) actual->siguiente->anterior = actual->anterior;
 
-    delete actual;
+    delete actual;*/
     return true;
 }
 
 template <typename T>
-void Lista<T>::mostrar() const {
+void Lista<T>::mostrar() const {/*
     NodoDoble<T>* actual = cabeza;
     while (actual) {
         cout << actual->dato << " <-> ";
         actual = actual->siguiente;
     }
-    cout << "NULL" << endl;
+    cout << "NULL" << endl;*/
 }
 
 template <typename T>
-void Lista<T>::mostrarReversa() const {
+void Lista<T>::mostrarReversa() const {/*
     NodoDoble<T>* actual = cola;
     while (actual) {
         cout << actual->dato << " <-> ";
         actual = actual->anterior;
     }
-    cout << "NULL" << endl;
+    cout << "NULL" << endl;*/
 }
-
+/*
 template<typename T>
 NodoDoble<T> *Lista<T>::getInicio() {
     return cabeza;
 }
+*/
