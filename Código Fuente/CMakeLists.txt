@@ -18,12 +18,14 @@ add_executable(CodigoFuente src/main.cpp
         src/juego/Ficha.h
         src/tablero/Casilla.cpp
         src/tablero/Casilla.h
-        src/pilascolas/ColaTurno.cpp
-        src/pilascolas/ColaTurno.h
-        src/pilascolas/Pila.cpp
-        src/pilascolas/Pila.h
-        src/pilascolas/Lista.cpp
-        src/pilascolas/Lista.h
+        src/pilascolas/ColaTurno.tpp
+        src/pilascolas/ColaTurno.hpp
+        src/pilascolas/Pila.tpp
+        src/pilascolas/Pila.hpp
+        src/pilascolas/Lista.hpp
+        src/pilascolas/Lista.tpp
+        src/pilascolas/NodoSimple.hpp
+        src/pilascolas/NodoSimple.tpp
         src/pilascolas/ListaDoble.hpp
         src/pilascolas/ListaDoble.tpp
         src/pilascolas/NodoDoble.hpp

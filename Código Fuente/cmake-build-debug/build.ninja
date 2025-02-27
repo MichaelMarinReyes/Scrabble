@@ -97,24 +97,6 @@ build CMakeFiles/CodigoFuente.dir/src/tablero/Casilla.cpp.o: CXX_COMPILER__Codig
   OBJECT_DIR = CMakeFiles/CodigoFuente.dir
   OBJECT_FILE_DIR = CMakeFiles/CodigoFuente.dir/src/tablero
 
-build CMakeFiles/CodigoFuente.dir/src/pilascolas/ColaTurno.cpp.o: CXX_COMPILER__CodigoFuente_unscanned_Debug /home/michael/Documentos/2025/Estructura$ de$ Datos/Laboratorio/Práctica$ 1/Código$ Fuente/src/pilascolas/ColaTurno.cpp || cmake_object_order_depends_target_CodigoFuente
-  DEP_FILE = CMakeFiles/CodigoFuente.dir/src/pilascolas/ColaTurno.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/CodigoFuente.dir
-  OBJECT_FILE_DIR = CMakeFiles/CodigoFuente.dir/src/pilascolas
-
-build CMakeFiles/CodigoFuente.dir/src/pilascolas/Pila.cpp.o: CXX_COMPILER__CodigoFuente_unscanned_Debug /home/michael/Documentos/2025/Estructura$ de$ Datos/Laboratorio/Práctica$ 1/Código$ Fuente/src/pilascolas/Pila.cpp || cmake_object_order_depends_target_CodigoFuente
-  DEP_FILE = CMakeFiles/CodigoFuente.dir/src/pilascolas/Pila.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/CodigoFuente.dir
-  OBJECT_FILE_DIR = CMakeFiles/CodigoFuente.dir/src/pilascolas
-
-build CMakeFiles/CodigoFuente.dir/src/pilascolas/Lista.cpp.o: CXX_COMPILER__CodigoFuente_unscanned_Debug /home/michael/Documentos/2025/Estructura$ de$ Datos/Laboratorio/Práctica$ 1/Código$ Fuente/src/pilascolas/Lista.cpp || cmake_object_order_depends_target_CodigoFuente
-  DEP_FILE = CMakeFiles/CodigoFuente.dir/src/pilascolas/Lista.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/CodigoFuente.dir
-  OBJECT_FILE_DIR = CMakeFiles/CodigoFuente.dir/src/pilascolas
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CodigoFuente
@@ -123,7 +105,7 @@ build CMakeFiles/CodigoFuente.dir/src/pilascolas/Lista.cpp.o: CXX_COMPILER__Codi
 #############################################
 # Link the executable CodigoFuente
 
-build CodigoFuente: CXX_EXECUTABLE_LINKER__CodigoFuente_Debug CMakeFiles/CodigoFuente.dir/src/main.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Juego.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Jugador.cpp.o CMakeFiles/CodigoFuente.dir/src/utils/CargaDatos.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/Tablero.cpp.o CMakeFiles/CodigoFuente.dir/src/puntuacion/Puntaje.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Ficha.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/Casilla.cpp.o CMakeFiles/CodigoFuente.dir/src/pilascolas/ColaTurno.cpp.o CMakeFiles/CodigoFuente.dir/src/pilascolas/Pila.cpp.o CMakeFiles/CodigoFuente.dir/src/pilascolas/Lista.cpp.o
+build CodigoFuente: CXX_EXECUTABLE_LINKER__CodigoFuente_Debug CMakeFiles/CodigoFuente.dir/src/main.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Juego.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Jugador.cpp.o CMakeFiles/CodigoFuente.dir/src/utils/CargaDatos.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/Tablero.cpp.o CMakeFiles/CodigoFuente.dir/src/puntuacion/Puntaje.cpp.o CMakeFiles/CodigoFuente.dir/src/juego/Ficha.cpp.o CMakeFiles/CodigoFuente.dir/src/tablero/Casilla.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/CodigoFuente.dir
   POST_BUILD = :

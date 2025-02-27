@@ -1,96 +1,77 @@
-#include "Lista.h"
+#pragma once
+#include "Lista.hpp"
+#include "NodoSimple.hpp"
 #include <iostream>
-
 using namespace std;
+
+template<typename T>
+Lista<T>::Lista(): cabeza(nullptr), cola(nullptr){}
 
 template <typename T>
 Lista<T>::~Lista() {
-    /*NodoDoble<T>* actual = cabeza;
-    while (actual) {
-        NodoDoble<T>* temp = actual;
-        actual = actual->siguiente;
-        delete temp;
-    }
-    cabeza = cola = nullptr;*/
+  while (cabeza) {
+    NodoSimple<T>* temp = cabeza;
+    cabeza = cabeza->siguiente;
+    delete temp;
 }
 
 template <typename T>
 void Lista<T>::insertarInicio(T valor) {
-    /*NodoDoble<T>* nuevo = new NodoDoble<T>(valor);
-    if (!cabeza) {
-        cabeza = cola = nuevo;
+    NodoSimple<T>* nuevoNodo = new NodoSimple<T>(valor);
+    if(!cabeza) {
+      cabeza = nuevoNodo;
+      cola = nuevoNodo;
     } else {
-        nuevo->siguiente = cabeza;
-        cabeza->anterior = nuevo;
-        cabeza = nuevo;
-    }*/
+      nuevoNodo->siguiente = cabeza;
+      cabeza = nuevoNodo;
+    }
 }
 
 template <typename T>
 void Lista<T>::insertarFinal(T valor) {
-   /* NodoDoble<T>* nuevo = new NodoDoble<T>(valor);
-    if (!cola) {
-        cabeza = cola = nuevo;
-    } else {
-        nuevo->anterior = cola;
-        cola->siguiente = nuevo;
-        cola = nuevo;
-    }*/
+   NodoSimple<T>* nuevoNodo = new NodoSimple<T>(valor);
+      if (!cola) {
+          cabeza = nuevoNodo;
+          cola = nuevoNodo;
+      } else {
+          cola->siguiente = nuevoNodo;
+          cola = nuevoNodo;
+      }
 }
 
 template <typename T>
 bool Lista<T>::eliminar(T valor) {
-   /* if (!cabeza) return false;
+      if (!cabeza) {
+          return false;
+      }
+      NodoSimple<T>* actual = cabeza;
+      NodoSimple<T>* anterior = nullptr;
 
-    NodoDoble<T>* actual = cabeza;
-
-    while (actual && actual->dato != valor) {
-        actual = actual->siguiente;
-    }
-
-    if (!actual) return false;
-
-    if (actual == cabeza) {
-        cabeza = actual->siguiente;
-        if (cabeza) cabeza->anterior = nullptr;
-        else cola = nullptr;
-    }
-
-    if (actual == cola) {
-        cola = actual->anterior;
-        if (cola) cola->siguiente = nullptr;
-        else cabeza = nullptr;
-    }
-
-    if (actual->anterior) actual->anterior->siguiente = actual->siguiente;
-    if (actual->siguiente) actual->siguiente->anterior = actual->anterior;
-
-    delete actual;*/
-    return true;
+      while (actual) {
+          if (actual->data == valor) {
+              if (anterior) {
+                  anterior->siguiente = actual->siguiente;
+              } else {
+                  cabeza = actual->siguiente;
+              }
+              if (actual == cola) {
+                  cola = anterior;
+              }
+              delete actual;
+              return true;
+          }
+          anterior = actual;
+          actual = actual->siguiente;
+      }
+      return false;
 }
 
 template <typename T>
-void Lista<T>::mostrar() const {/*
-    NodoDoble<T>* actual = cabeza;
-    while (actual) {
-        cout << actual->dato << " <-> ";
+void Lista<T>::mostrar() const {
+    NodoSimple<T>* actual = cabeza;
+    while(actual) {
+        cout << actual->data << " ";
         actual = actual->siguiente;
     }
-    cout << "NULL" << endl;*/
+    cout << endl;
 }
-
-template <typename T>
-void Lista<T>::mostrarReversa() const {/*
-    NodoDoble<T>* actual = cola;
-    while (actual) {
-        cout << actual->dato << " <-> ";
-        actual = actual->anterior;
-    }
-    cout << "NULL" << endl;*/
-}
-/*
-template<typename T>
-NodoDoble<T> *Lista<T>::getInicio() {
-    return cabeza;
-}
-*/

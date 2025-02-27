@@ -32,18 +32,22 @@
     <list default="true" id="82e424fd-2e3c-4c11-923a-27d3d6e6c63e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-82cd26ed35a1264bb2a4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2025-02-27T06-08-48-0956.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CodigoFuente-Debug-368893e9ed95a35bd0c5.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CodigoFuente.dir/src/tablero/Tablero.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CodigoFuente.dir/src/tablero/Tablero.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CodigoFuente" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CodigoFuente" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pilascolas/Lista.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/pilascolas/Lista.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pilascolas/ColaTurno.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/pilascolas/ColaTurno.tpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pilascolas/ColaTurno.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/pilascolas/ColaTurno.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pilascolas/Lista.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pilascolas/Lista.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/pilascolas/Lista.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pilascolas/Lista.tpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/pilascolas/Lista.tpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pilascolas/NodoDoble.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pilascolas/NodoDoble.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tablero/Tablero.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tablero/Tablero.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tablero/Tablero.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/tablero/Tablero.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pilascolas/NodoSimple.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pilascolas/NodoSimple.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/pilascolas/NodoSimple.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pilascolas/Pila.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/pilascolas/Pila.tpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pilascolas/Pila.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/pilascolas/Pila.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,12 +116,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Scrabble" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CodigoFuente" TARGET_NAME="CodigoFuente" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CodigoFuente" RUN_TARGET_NAME="CodigoFuente">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scrabble" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CodigoFuente" TARGET_NAME="CodigoFuente" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CodigoFuente" RUN_TARGET_NAME="CodigoFuente">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -138,7 +142,8 @@
       <workItem from="1740461148077" duration="2017000" />
       <workItem from="1740497051339" duration="30042000" />
       <workItem from="1740585725407" duration="4774000" />
-      <workItem from="1740626695131" duration="9379000" />
+      <workItem from="1740626695131" duration="11102000" />
+      <workItem from="1740639632650" duration="3314000" />
     </task>
     <servers />
   </component>

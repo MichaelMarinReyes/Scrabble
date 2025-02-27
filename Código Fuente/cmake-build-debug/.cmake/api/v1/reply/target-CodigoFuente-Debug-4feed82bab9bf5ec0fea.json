@@ -56,10 +56,7 @@
 				7,
 				9,
 				11,
-				13,
-				15,
-				17,
-				19
+				13
 			]
 		}
 	],
@@ -99,10 +96,7 @@
 				7,
 				9,
 				11,
-				13,
-				15,
-				17,
-				19
+				13
 			]
 		},
 		{
@@ -118,17 +112,22 @@
 				14,
 				16,
 				18,
-				20,
+				19,
 				21,
-				23
+				23,
+				25
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
+				15,
+				17,
+				20,
 				22,
-				24
+				24,
+				26
 			]
 		}
 	],
@@ -219,36 +218,43 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/pilascolas/ColaTurno.cpp",
-			"sourceGroupIndex" : 0
+			"path" : "src/pilascolas/ColaTurno.tpp",
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/pilascolas/ColaTurno.h",
+			"path" : "src/pilascolas/ColaTurno.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/pilascolas/Pila.cpp",
-			"sourceGroupIndex" : 0
+			"path" : "src/pilascolas/Pila.tpp",
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/pilascolas/Pila.h",
+			"path" : "src/pilascolas/Pila.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/pilascolas/Lista.cpp",
-			"sourceGroupIndex" : 0
+			"path" : "src/pilascolas/Lista.hpp",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/pilascolas/Lista.h",
+			"path" : "src/pilascolas/Lista.tpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/pilascolas/NodoSimple.hpp",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/pilascolas/NodoSimple.tpp",
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 1,
