@@ -26,8 +26,8 @@ bool ColaTurno<T>::estaVacia() const {
 }
 
 template<class T>
-void ColaTurno<T>::agregar(const T* dato) {
-    NodoSimple<T>* nuevoNodo = new NodoSimple<T>(dato);
+void ColaTurno<T>::agregar(const T *dato) {
+    NodoSimple<T> *nuevoNodo = new NodoSimple<T>(dato);
     if (estaVacia()) {
         frente = nuevoNodo;
         fin = nuevoNodo;
@@ -37,12 +37,12 @@ void ColaTurno<T>::agregar(const T* dato) {
 }
 
 template<class T>
-T* ColaTurno<T>::eliminar() {
+T *ColaTurno<T>::eliminar() {
     if (estaVacia()) {
         throw invalid_argument("No se eliminar el cola");
     }
-    NodoSimple<T>* aux = frente;
-    T* dato = aux->getDato();
+    NodoSimple<T> *aux = frente;
+    T *dato = aux->getDato();
     frente = frente->siguiente;
     if (frente == nullptr) {
         fin = nullptr;
@@ -52,7 +52,7 @@ T* ColaTurno<T>::eliminar() {
 }
 
 template<class T>
-T* ColaTurno<T>::mostrar() const {
+T *ColaTurno<T>::mostrar() const {
     if (estaVacia()) {
         throw invalid_argument("No se eliminar el cola");
     }
@@ -61,7 +61,7 @@ T* ColaTurno<T>::mostrar() const {
 
 template<class T>
 void ColaTurno<T>::mostrarTodos() {
-    NodoSimple<T>* aux = frente;
+    NodoSimple<T> *aux = frente;
     if (estaVacia()) {
         cout << "Cola vacia\n";
         return;
@@ -69,8 +69,11 @@ void ColaTurno<T>::mostrarTodos() {
 
     cout << "Elementos en la cola:\n";
     while (aux != nullptr) {
-        Jugador* jugador = aux->getDato();
-        cout << jugador->getNombre() << "\n";
+        Jugador *jugador = aux->getDato();
+        cout << "\033[32mJugador:\033[0m " << jugador->getNombre() << "\n";
+        cout << "\t\033[34mFichas:\033[0m ";
+        jugador->mostrarFichas();
+        cout << "\n";
         aux = aux->siguiente;
     }
     cout << endl;
